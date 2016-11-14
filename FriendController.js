@@ -1,11 +1,22 @@
 angular.module("app").controller("FriendController", function($scope) {
 
-    $scope.test = "HELLO";
+    $scope.sortProps = [
+        {display: "Name", value: "name"},
+        {display: "#Friends", value: "friend_count"},
+        {display: "City", value: "current_location.city"},
+        {display: "State", value: "current_location.state"},
+        {display: "Country", value: "current_location.country"}
+    ];
+
+    $scope.sortDirections = [
+        {display: "Ascending", value: false},
+        {display: "Descending", value: true}
+    ];
 
     $scope.friends = [
   {
     "name": "Preston McNeil",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash2/1117694_1614542_108355616_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01232014/images/albert-einstein-profile-picture-133x133.PNG",
     "current_location": {
       "city": "Houston",
       "state": "Texas",
@@ -22,7 +33,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Ryan Rasmussen",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/211536_7938705_80713399_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01232014/images/bruce-lee-profile-picture-133x133.PNG",
     "current_location": {
       "city": "New York",
       "state": "New York",
@@ -39,7 +50,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Terri Ruff",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/41368_8222994_4799_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01232014/images/chuck-norris-profile-picture-133x133.PNG",
     "current_location": {
       "city": "Sandy",
       "state": "Utah",
@@ -61,7 +72,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Lindsey Mayer",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/173210_10024969_2137324550_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01232014/images/alf-profile-picture-133x133.PNG",
     "current_location": null,
     "status": null,
     "friend_count": 870,
@@ -69,7 +80,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Peter John Renslow",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash2/1085700_10051596_890338133_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01242014/images/justin-bieber-profile-picture-133x133.PNG",
     "current_location": {
       "city": "West Lafayette",
       "state": "Indiana",
@@ -91,7 +102,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Craig Carroll",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/371702_10052664_1664842436_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01242014/images/magnum-pi-profile-picture-133x133.PNG",
     "current_location": {
       "city": "Tempe",
       "state": "Arizona",
@@ -108,7 +119,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Jesse Morrison",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/623709_10053698_1875866361_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01252014/images/doc-profile-picture-133x133.PNG",
     "current_location": null,
     "status": {
       "message": "I'm pretty excited at the prospect of having the option for cold water out of the faucet. Not just turning it all the way to the right and getting \"less hot\" water",
@@ -121,7 +132,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Michelle Key",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash1/372639_10054231_314184666_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01242014/images/mr-acid-man-profile-picture-133x133.PNG",
     "current_location": null,
     "status": null,
     "friend_count": 928,
@@ -129,7 +140,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Abe Itty",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/161103_10123983_1859311604_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01252014/images/leo-dicaprio-profile-picture-133x133.PNG",
     "current_location": null,
     "status": null,
     "friend_count": 1427,
@@ -137,7 +148,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Ken Peng",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/49592_10133832_1627020292_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01252014/images/fighter-jet-profile-picture-133x133.PNG",
     "current_location": {
       "city": "Tucson",
       "state": "Arizona",
@@ -154,7 +165,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "John Dohyung Kwon",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/static-ak/rsrc.php/v2/yo/r/UlIqmHJn-SK.gif",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01262014/images/walking-dead-rick-profile-picture-133x133.PNG",
     "current_location": null,
     "status": null,
     "friend_count": 79,
@@ -162,7 +173,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Dan Sullivan",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash1/273289_17800762_306073823_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01232014/images/eagle-profile-picture-133x133.PNG",
     "current_location": {
       "city": "Cambridge",
       "state": "Massachusetts",
@@ -179,7 +190,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Chad Bennett",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/372513_17802226_425948030_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01262014/images/wolf-profile-picture-133x133.PNG",
     "current_location": null,
     "status": null,
     "friend_count": 1885,
@@ -187,7 +198,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Kirk Hill",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/41374_17802872_794_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01232014/images/furby-profile-picture-133x133.PNG",
     "current_location": {
       "city": "Pearland",
       "state": "Texas",
@@ -204,7 +215,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Joseph 'Moses' Craven",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/372074_17803104_1870588520_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01232014/images/mr-bean-profile-picture-133x133.PNG",
     "current_location": {
       "city": "Ardmore",
       "state": "Oklahoma",
@@ -221,7 +232,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Jeremy James",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/261035_17806007_1068091327_q.jpg",
+    "pic_square": "http://free-profile-pics.com/images/free-blackberry-bbm-profile-picture_246.png",
     "current_location": {
       "city": "Provo",
       "state": "Utah",
@@ -238,7 +249,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Heather Clouse",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/623637_17808188_847129617_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01242014/images/painted-kitten-profile-picture-133x133.PNG",
     "current_location": {
       "city": "Orem",
       "state": "Utah",
@@ -260,7 +271,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Joel Gardner",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash1/275556_17811336_577754819_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01242014/images/lamborghini-profile-picture-133x133.PNG",
     "current_location": {
       "city": "Provo",
       "state": "Utah",
@@ -277,7 +288,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Lance Winward",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/161188_17813334_4416158_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01242014/images/purple-tiger-profile-picture-133x133.PNG",
     "current_location": {
       "city": "American Fork",
       "state": "Utah",
@@ -294,7 +305,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "JD Clark",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/276075_17814064_647271890_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01252014/images/darthvader-profile-picture-133x133.PNG",
     "current_location": {
       "city": "Provo",
       "state": "Utah",
@@ -316,7 +327,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Spencer Mooso",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash2/1076291_17814202_641324374_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01242014/images/sponge-bob-profile-picture-133x133.PNG",
     "current_location": {
       "city": "Lehi",
       "state": "Utah",
@@ -333,7 +344,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Andrew Wiggins",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/186785_17814602_1643545710_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01252014/images/fighter-jet-profile-picture-133x133.PNG",
     "current_location": {
       "city": "Salt Lake City",
       "state": "Utah",
@@ -350,7 +361,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Brittany Brown",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash1/276284_17814624_766798593_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01242014/images/kat-von-d-profile-picture-133x133.PNG",
     "current_location": null,
     "status": {
       "message": "Any of my wondeful friends know how to change a water pump on a ford explorer?? :) I will pay and provide delicious treats",
@@ -363,7 +374,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Nick Petersen",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/202884_17814683_300937051_q.jpg",
+    "pic_square": "http://free-profile-pics.com/images/free-blackberry-bbm-profile-picture_290.png",
     "current_location": {
       "city": "Jupiter",
       "state": "Florida",
@@ -385,7 +396,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Jeffrey Swindle",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash1/211601_17815112_1710482679_q.jpg",
+    "pic_square": "http://free-profile-pics.com/profile-pictures/01242014/images/pumba-profile-picture-133x133.PNG",
     "current_location": {
       "city": "Ann Arbor",
       "state": "Michigan",
@@ -402,7 +413,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Travis Epperson",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/187078_17816042_3304316_q.jpg",
+    "pic_square": "http://free-profile-pics.com/images/bbm_avatar_107.png",
     "current_location": {
       "city": "Phoenix",
       "state": "Arizona",
@@ -419,7 +430,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Matt LeGare",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/195517_17816894_384186_q.jpg",
+    "pic_square": "http://free-profile-pics.com/images/bbm_avatar_117.png",
     "current_location": null,
     "status": null,
     "friend_count": 350,
@@ -427,7 +438,7 @@ angular.module("app").controller("FriendController", function($scope) {
   },
   {
     "name": "Karla Jensen Pratt",
-    "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/173707_17818839_4084230_q.jpg",
+    "pic_square": "http://free-profile-pics.com/images/free-blackberry-bbm-profile-picture_175.png",
     "current_location": null,
     "status": null,
     "friend_count": 855,
